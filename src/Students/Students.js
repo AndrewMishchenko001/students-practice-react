@@ -12,6 +12,7 @@ class Students extends Component {
     this.setState((prev) => ({
       students: [...prev.students, { ...student, id: uuidv4() }],
     }));
+    console.log("this.state :>> ", this.state);
   };
 
   removeStudent = (id) => {

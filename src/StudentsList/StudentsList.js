@@ -1,15 +1,15 @@
 import React from "react";
 
-const StudentsList = ({ students, removeStudent, id }) => {
-  const removeItem = () => removeStudent(id);
+const StudentsList = ({ students, removeStudent }) => {
+  //   const removeItem = () => removeStudent(students.id);
   return (
     <ul>
-      {students.map((student) => (
+      {students.map(({ id, name, course, age }) => (
         <li key={id}>
-          <h2>{student.name}</h2>
-          <p>{student.course}</p>
-          <p>{student.age}</p>
-          <button type="button" onClick={() => removeStudent(removeItem)}>
+          <h2>{name}</h2>
+          <p>{course}</p>
+          <p>{age}</p>
+          <button type="button" onClick={() => removeStudent(id)}>
             Remove
           </button>
         </li>
